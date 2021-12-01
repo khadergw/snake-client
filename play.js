@@ -2,7 +2,7 @@
 
 const connect = require('./client');
 
-const connect = require('./input');
+const setupInput = require('./input');
 
 
 
