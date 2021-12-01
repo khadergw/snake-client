@@ -13,6 +13,7 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     conn.write('Name: GWK');
+    conn.write('Say: Hii');
     //conn.write('Move: up');
     setTimeout(() => {
               conn.write('Move: up');
