@@ -12,11 +12,37 @@ const connect = function () {
   
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
-    conn.write('Name:GWK');
+    conn.write('Name: GWK');
+    //conn.write('Move: up');
+    setTimeout(() => {
+              conn.write('Move: up');
+            }, 1000)
+            setTimeout(() => {
+              conn.write('Move: down');
+            }, 2000)
+            setTimeout(() => {
+              conn.write('Move: left');
+            }, 3000)
+            setTimeout(() => {
+              conn.write('Move: right');
+            }, 4000)
   });
+
+  // conn.on("data", () => {
+  //   console.log("we have data");
+  // });
 
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
+
+// //for (let i = 1; i <= 10 ; i++) { // moveup with timeout delay
+//       setTimeout(() => {
+//         conn.write('Move: left');
+//       }, 2000) //* i)
+//    // };
+
+
+// console.log("Connecting ...");
+// connect();
+module.exports = connect;
